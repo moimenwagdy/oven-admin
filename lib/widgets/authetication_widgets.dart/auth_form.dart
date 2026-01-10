@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/widgets/authetication_widgets.dart/auth_inputs.dart';
-import 'package:oven_admin/widgets/authetication_widgets.dart/form_submit_button.dart';
+import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
 
 class AuthForm extends StatefulWidget {
   const AuthForm({super.key});
@@ -42,7 +43,7 @@ class _AuthFormState extends State<AuthForm> {
             width: 140,
             child: FormSubmitButtom(
               textChild: Text(
-                "Submit",
+                context.l10n.submit,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.onPrimary,
                   fontSize: 16,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oven_admin/utils/helpers/screen_dimensions.dart';
+import 'package:oven_admin/widgets/layout/language_toggler.dart';
 import 'package:oven_admin/widgets/layout/nav_image.dart';
 import 'package:oven_admin/widgets/layout/sections_side.dart';
 
@@ -16,38 +17,45 @@ class LayoutWrapper extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: NavImage(),
       ),
-      body: Row(
+      body: Column(
         children: [
-          Container(
-            width: context.screenWidth * .25,
-            height: context.screenHeight,
-            padding: const EdgeInsets.all(10),
-            child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                border: BoxBorder.all(
-                  color: Theme.of(context).colorScheme.primary,
+          Expanded(
+            child: Row(
+              children: [
+                Container(
+                  width: context.screenWidth * .25,
+                  height: context.screenHeight,
+                  padding: const EdgeInsets.all(10),
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: BoxBorder.all(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: SectionsSide(),
+                  ),
                 ),
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: SectionsSide(),
+                Container(
+                  width: context.screenWidth * .75,
+                  height: context.screenHeight,
+                  padding: const EdgeInsets.all(10),
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: BoxBorder.all(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: child,
+                  ),
+                ),
+              ],
             ),
           ),
-          Container(
-            width: context.screenWidth * .75,
-            height: context.screenHeight,
-            padding: const EdgeInsets.all(10),
-            child: Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                border: BoxBorder.all(
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: child,
-            ),
-          ),
+          LanguageToggler(),
         ],
       ),
     );

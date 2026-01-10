@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:oven_admin/pages/accounts_page.dart';
 import 'package:oven_admin/pages/authentication_page.dart';
+import 'package:oven_admin/pages/categories_page.dart';
 import 'package:oven_admin/pages/images_page.dart';
 import 'package:oven_admin/pages/orders_page.dart';
 import 'package:oven_admin/pages/products_lists_page.dart';
@@ -31,6 +32,10 @@ final GoRouter appRouter = GoRouter(
           path: '/home',
           pageBuilder: (context, state) =>
               NoTransitionPage(child: MyHomePage()),
+        ),
+        GoRoute(
+          path: "/categories",
+          builder: (context, state) => CategoriesPage(),
         ),
         GoRoute(
           path: '/products',

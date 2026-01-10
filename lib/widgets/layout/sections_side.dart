@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/widgets/layout/section_item.dart';
 
 class SectionsSide extends StatelessWidget {
@@ -11,33 +12,38 @@ class SectionsSide extends StatelessWidget {
     return Column(
       children: [
         SectionItem(
+          destination: "/categories",
+          textChild: context.l10n.categoriesTab,
+          isSelected: currentLocation == "/categoires",
+        ),
+        SectionItem(
           destination: "/products",
-          textChild: "Products",
+          textChild: context.l10n.productsTab,
           isSelected: currentLocation == "/products",
         ),
         SectionItem(
           destination: "/lists",
-          textChild: "Prodcuts Lists",
+          textChild: context.l10n.productsListsTab,
           isSelected: currentLocation == "/lists",
         ),
         SectionItem(
           destination: "/orders",
-          textChild: "Orders",
+          textChild: context.l10n.ordersTab,
           isSelected: currentLocation == "/orders",
         ),
         SectionItem(
           destination: "/images",
-          textChild: "Images",
+          textChild: context.l10n.imagesTab,
           isSelected: currentLocation == "/images",
         ),
         SectionItem(
           destination: "/accounts",
-          textChild: "Accounts",
+          textChild: context.l10n.accountsTab,
           isSelected: currentLocation == "/accounts",
         ),
         SectionItem(
           destination: "/rules",
-          textChild: "Rules",
+          textChild: context.l10n.rulesTab,
           isSelected: currentLocation == "/rules",
         ),
         SectionItem(

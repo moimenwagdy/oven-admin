@@ -1,0 +1,17 @@
+{
+  "productsTab": "Products",
+  "categoriesTab": "Categories",
+  "productsListsTab": "Products Lists",
+  "ordersTab": "Orders",
+  "imagesTab": "Images",
+  "accountsTab": "Accounts",
+  "rulesTab": "Rules",
+  "password": "Password",
+  "enterPassword": "Enter your password",
+  "userName": "Name",
+  "enterUserName": "Enter your name",
+  "submit": "Submit",
+  "welcomeMessage": "Welcome to Oven Admin Dashboard",
+  "locale": "عربى",
+  "language": "Language"
+}

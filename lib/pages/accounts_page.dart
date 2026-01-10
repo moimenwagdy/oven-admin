@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 
 class AccountsPage extends StatelessWidget {
   const AccountsPage({super.key});
@@ -7,7 +8,7 @@ class AccountsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        "AccountsPage",
+        context.l10n.accountsTab,
         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
       ),
     );

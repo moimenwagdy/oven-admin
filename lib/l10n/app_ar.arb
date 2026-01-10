@@ -1,0 +1,17 @@
+{
+  "productsTab": "المنتجات",
+  "categoriesTab": "الأقسام",
+  "productsListsTab": "قوائم المنتجات",
+  "ordersTab": "الطلبات",
+  "imagesTab": "الصور",
+  "accountsTab": "الحسابات",
+  "rulesTab": "القواعد",
+  "password": "كلمة السر",
+  "enterPassword": "أدخل كلمة السر",
+  "userName": "الإسم",
+  "enterUserName": "ادخل الإسم",
+  "submit": "تأكيد",
+  "welcomeMessage": "مرحبًا بك في لوحة تحكم Oven",
+  "locale": "En",
+  "language": "اللغة"
+}

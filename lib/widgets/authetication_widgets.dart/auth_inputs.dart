@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_text_field.dart';
 
 class AuthInputs extends StatelessWidget {
@@ -19,12 +20,13 @@ class AuthInputs extends StatelessWidget {
           CustomTextField(
             controller: adminNameController,
             inputType: TextInputType.name,
-            name: "Name",
+            name: context.l10n.userName,
           ),
           CustomTextField(
             controller: passwordController,
             inputType: TextInputType.name,
-            name: "Password",
+            name: context.l10n.password,
+            obscureText: true,
           ),
         ],
       ),
