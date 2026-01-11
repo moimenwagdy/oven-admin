@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/widgets/authetication_widgets.dart/auth_inputs.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
@@ -22,9 +23,10 @@ class _AuthFormState extends State<AuthForm> {
     super.dispose();
   }
 
-  onPress() {
+  void onPress() {
     print(_adminNameController.text);
     print(_passwordController.text);
+    context.go("/home");
   }
 
   @override
@@ -38,20 +40,7 @@ class _AuthFormState extends State<AuthForm> {
             adminNameController: _adminNameController,
             passwordController: _passwordController,
           ),
-          SizedBox(
-            height: 40,
-            width: 140,
-            child: FormSubmitButtom(
-              textChild: Text(
-                context.l10n.submit,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.onPrimary,
-                  fontSize: 16,
-                ),
-              ),
-              onPressed: onPress,
-            ),
-          ),
+          FormSubmitButtom(textChild: context.l10n.submit, onPressed: onPress),
         ],
       ),
     );
