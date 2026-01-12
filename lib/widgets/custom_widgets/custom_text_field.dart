@@ -8,7 +8,8 @@ class CustomTextField extends StatelessWidget {
   final TextCapitalization textCapitalization;
   final TextInputType inputType;
   final String? Function(String?)? validator;
-  final bool isSmall;
+  final bool showNameAtTop;
+  final bool enabled;
 
   const CustomTextField({
     super.key,
@@ -18,14 +19,15 @@ class CustomTextField extends StatelessWidget {
     this.textCapitalization = TextCapitalization.none,
     required this.inputType,
     this.validator,
-    this.isSmall = false,
+    this.showNameAtTop = true,
+    this.enabled = true,
   });
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       validator: validator,
       cursorHeight: 24,
-      enabled: true,
+      enabled: enabled,
       controller: controller,
       textCapitalization: textCapitalization,
       maxLength: 50,
@@ -44,7 +46,7 @@ class CustomTextField extends StatelessWidget {
         ),
         contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         isDense: true,
-        labelText: name,
+        labelText: showNameAtTop ? name : null,
         counterText: "",
         labelStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
           color: Theme.of(context).colorScheme.onSurface.withValues(alpha: .5),

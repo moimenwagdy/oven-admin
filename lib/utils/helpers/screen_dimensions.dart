@@ -6,10 +6,8 @@ extension MediaQueryValues on BuildContext {
   bool get isPortrait =>
       MediaQuery.of(this).orientation == Orientation.portrait;
 
-  bool get isSmallDevice => MediaQuery.of(this).size.shortestSide < 640;
-
-
-  bool get isDesktop => MediaQuery.of(this).size.shortestSide >= 1024;
+  bool get isSmallDevice => MediaQuery.of(this).size.width < 720;
+  bool get isDesktop => MediaQuery.of(this).size.width >= 1024;
 
   /// --- 🌍 LANGUAGE / LOCALE ---
   Locale get locale => Localizations.localeOf(this);

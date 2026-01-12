@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_icon.dart';
 
-class CategoryItem extends StatelessWidget {
+class CustomEditableListile extends ConsumerWidget {
   final String title;
-  const CategoryItem({super.key, required this.title});
+  final VoidCallback onClick;
+  const CustomEditableListile({super.key, required this.title, required this.onClick});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Material(
       child: ListTile(
         tileColor: Theme.of(context).colorScheme.onSecondaryFixed,
         title: Text(title),
+        titleTextStyle: TextStyle(fontSize: 12),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             IconButton(
-              onPressed: () {},
-              icon: CustomIcon(icon: Icons.delete),
-            ),
-            IconButton(
-              onPressed: () {},
+              iconSize: 14,
+              onPressed: onClick,
               icon: CustomIcon(icon: Icons.edit),
             ),
           ],

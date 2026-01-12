@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:oven_admin/utils/helpers/localization_extension.dart';
+import 'package:oven_admin/widgets/products_page_widgets/product_form_container.dart';
+import 'package:oven_admin/widgets/products_page_widgets/products_list.dart';
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Center(
-          child: Text(
-            context.l10n.productsTab,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-        ),
+        ProductsList(),
+        Expanded(child: ProductFormContainer()),
       ],
     );
   }

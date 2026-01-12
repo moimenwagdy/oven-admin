@@ -38,6 +38,8 @@ dependencies:
   intl: any
   shared_preferences: ^2.5.3
   http: ^1.6.0
+  dropdown_button2: any
+
 
 
 
