@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:oven_admin/providers/products_provider/products_provider.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_edit_input_with_title.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_text_field.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
 import 'package:oven_admin/widgets/products_page_widgets/dropdown_categories.dart';
+import 'package:oven_admin/widgets/products_page_widgets/upload_image.dart';
 
 class EditProductInputs extends StatelessWidget {
   final TextEditingController idController;
   final TextEditingController titleController;
   final TextEditingController descriptionController;
   final TextEditingController priceController;
+  final Product productItem;
 
   const EditProductInputs({
     super.key,
@@ -16,6 +19,7 @@ class EditProductInputs extends StatelessWidget {
     required this.titleController,
     required this.descriptionController,
     required this.priceController,
+    required this.productItem,
   });
 
   @override
@@ -64,11 +68,11 @@ class EditProductInputs extends StatelessWidget {
             showNameAtTop: false,
           ),
         ),
-
+        UploadImage(),
         CustomEditInputWithTitle(
-          name: "Thumbnail",
+          name: "Cover image",
           childWidget: FormSubmitButtom(
-            textChild: "Edit Thumbnail",
+            textChild: "Edit cover image",
             onPressed: () {},
           ),
         ),

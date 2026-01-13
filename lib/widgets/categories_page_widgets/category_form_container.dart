@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/categories_providers/edit_category_provider.dart';
 import 'package:oven_admin/widgets/categories_page_widgets/edit_category_form.dart';
+import 'package:oven_admin/widgets/categories_page_widgets/empty_category_page_placeholder.dart';
+import 'package:oven_admin/widgets/custom_widgets/custom_header.dart';
 
 class CategoryFormContainer extends ConsumerWidget {
   const CategoryFormContainer({super.key});
@@ -9,40 +11,15 @@ class CategoryFormContainer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final item = ref.watch(editCategoryProvider);
-
     final Widget childWidget = item != null
         ? Column(
             spacing: 40,
             children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      item.name,
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              CustomHeader(itemName: item.name),
               EditCategoryForm(categoryItem: item),
             ],
           )
-        : Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Edit Category Section",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-              ),
-              Text("Select Category To Edit", style: TextStyle(fontSize: 12)),
-            ],
-          );
+        : EmptyCategoryPagePlaceholder();
     return childWidget;
   }
 }
-
-

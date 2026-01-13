@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/products_provider/edit_product_provider.dart';
+import 'package:oven_admin/widgets/custom_widgets/custom_header.dart';
 import 'package:oven_admin/widgets/products_page_widgets/edit_product_form.dart';
+import 'package:oven_admin/widgets/products_page_widgets/empty_product_page_placeholder.dart';
 
 class ProductFormContainer extends ConsumerWidget {
   const ProductFormContainer({super.key});
@@ -12,34 +14,14 @@ class ProductFormContainer extends ConsumerWidget {
 
     final Widget childWidget = productItem != null
         ? Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            spacing: 10,
             children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      productItem.title,
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              CustomHeader(itemName: productItem.title),
               EditProductForm(productItem: productItem),
             ],
           )
-        : Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Edit Products Section",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-              ),
-              Text("Select Product To Edit", style: TextStyle(fontSize: 12)),
-            ],
-          );
+        : EmptyProductPagePlaceholder();
 
     return childWidget;
   }

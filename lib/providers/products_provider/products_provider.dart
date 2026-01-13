@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'products_provider.g.dart';
 
@@ -20,9 +22,10 @@ class Product {
   final String description;
   final double price;
   final List<String> images;
-  final String thumbnail;
-  final String? video;
+  final Uint8List? thumbnail;
   final String categoryId;
+  final String? video;
+  final String cover;
 
   Product({
     required this.id,
@@ -32,6 +35,7 @@ class Product {
     required this.thumbnail,
     required this.price,
     required this.categoryId,
+    required this.cover,
     this.video,
   });
 }
@@ -45,7 +49,8 @@ final List<Product> englishProducts = [
     price: 12.99,
     categoryId: "Beauty",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "2",
@@ -55,7 +60,8 @@ final List<Product> englishProducts = [
     price: 18.50,
     categoryId: "Beauty",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "3",
@@ -65,7 +71,8 @@ final List<Product> englishProducts = [
     price: 22.00,
     categoryId: "Beauty",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "4",
@@ -75,7 +82,8 @@ final List<Product> englishProducts = [
     price: 22.00,
     categoryId: "Beauty",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "5",
@@ -85,7 +93,8 @@ final List<Product> englishProducts = [
     price: 22.00,
     categoryId: "Beauty",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "6",
@@ -95,7 +104,8 @@ final List<Product> englishProducts = [
     price: 22.00,
     categoryId: "Beauty",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
 
   // Fragrances (4–6)
@@ -107,7 +117,8 @@ final List<Product> englishProducts = [
     price: 35.00,
     categoryId: "Fragrances",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "8",
@@ -117,7 +128,8 @@ final List<Product> englishProducts = [
     price: 49.99,
     categoryId: "Fragrances",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "9",
@@ -127,7 +139,8 @@ final List<Product> englishProducts = [
     price: 14.99,
     categoryId: "Fragrances",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "10",
@@ -137,7 +150,8 @@ final List<Product> englishProducts = [
     price: 14.99,
     categoryId: "Fragrances",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "11",
@@ -147,7 +161,8 @@ final List<Product> englishProducts = [
     price: 14.99,
     categoryId: "Fragrances",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "12",
@@ -157,7 +172,8 @@ final List<Product> englishProducts = [
     price: 14.99,
     categoryId: "Fragrances",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
 
   // Furniture (7–9)
@@ -169,7 +185,8 @@ final List<Product> englishProducts = [
     price: 450.00,
     categoryId: "Furniture",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "1400",
@@ -179,7 +196,8 @@ final List<Product> englishProducts = [
     price: 120.00,
     categoryId: "Furniture",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "14",
@@ -189,7 +207,8 @@ final List<Product> englishProducts = [
     price: 99.99,
     categoryId: "Furniture",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "15",
@@ -199,7 +218,8 @@ final List<Product> englishProducts = [
     price: 99.99,
     categoryId: "Furniture",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "16",
@@ -209,7 +229,8 @@ final List<Product> englishProducts = [
     price: 99.99,
     categoryId: "Furniture",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "17",
@@ -219,7 +240,8 @@ final List<Product> englishProducts = [
     price: 99.99,
     categoryId: "Furniture",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
 
   // Groceries (10–12)
@@ -231,7 +253,8 @@ final List<Product> englishProducts = [
     price: 5.99,
     categoryId: "Groceries",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "19",
@@ -241,7 +264,8 @@ final List<Product> englishProducts = [
     price: 8.99,
     categoryId: "Groceries",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
   Product(
     id: "20",
@@ -251,6 +275,7 @@ final List<Product> englishProducts = [
     price: 15.50,
     categoryId: "Groceries",
     video: "",
-    thumbnail: "",
+    thumbnail: null,
+    cover: "",
   ),
 ];
