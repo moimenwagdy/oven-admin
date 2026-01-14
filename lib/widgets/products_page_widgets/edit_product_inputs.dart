@@ -26,6 +26,7 @@ class EditProductInputs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(productItem.categoryId);
     return Column(
       spacing: 10,
       children: [
@@ -41,7 +42,9 @@ class EditProductInputs extends StatelessWidget {
         ),
         CustomEditInputWithTitle(
           name: "Category",
-          childWidget: DropdownCategories(),
+          childWidget: DropdownCategories(
+            itemsCategory: productItem.categoryId,
+          ),
         ),
         CustomEditInputWithTitle(
           name: "Title",

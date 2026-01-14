@@ -79,6 +79,7 @@ class _EditCategoryFormState extends ConsumerState<EditCategoryForm> {
                               slug: idController.text,
                               name: nameController.text,
                               url: orderController.text,
+                              thumbnail: widget.categoryItem.thumbnail,
                             ),
                           );
                       ref.invalidate(categoriesProvider);

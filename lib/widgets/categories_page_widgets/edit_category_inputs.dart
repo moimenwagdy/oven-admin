@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oven_admin/providers/categories_providers/upload_category_thumbnail.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_edit_input_with_title.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_text_field.dart';
 
@@ -46,6 +47,7 @@ class EditCategoryInputs extends StatelessWidget {
             showNameAtTop: false,
           ),
         ),
+        UploadCategoryThumbnail(),
       ],
     );
   }

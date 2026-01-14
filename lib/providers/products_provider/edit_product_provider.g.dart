@@ -41,7 +41,7 @@ final class EditProductProvider
   }
 }
 
-String _$editProductHash() => r'f1aad28aa3375ec1b95434102e276ec006860374';
+String _$editProductHash() => r'8eafede2170dea99a22f4477b5ec5588a2d15645';
 
 abstract class _$EditProduct extends $Notifier<Product?> {
   Product? build();

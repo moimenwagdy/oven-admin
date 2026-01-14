@@ -41,7 +41,7 @@ final class EditCategoryProvider
   }
 }
 
-String _$editCategoryHash() => r'10e5762f973f7e383b4886ba00dbc53581597a0b';
+String _$editCategoryHash() => r'38f3871bf24aba6b91c893fdaad55fc99ff6b372';
 
 abstract class _$EditCategory extends $Notifier<Category?> {
   Category? build();

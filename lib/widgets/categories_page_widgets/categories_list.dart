@@ -48,7 +48,7 @@ class CategoriesList extends ConsumerWidget {
         ),
       ),
       error: (error, stackTrace) {
-        return Text("No Data");
+        return Text("$error");
       },
     );
   }

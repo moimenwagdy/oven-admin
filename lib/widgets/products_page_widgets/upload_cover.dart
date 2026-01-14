@@ -25,7 +25,7 @@ class UploadCover extends ConsumerWidget {
           }
         },
       ),
-      rowPreviewArea: Row(children: [image]),
+      rowPreviewArea: image,
     );
   }
 }

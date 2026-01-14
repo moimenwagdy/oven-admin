@@ -5,12 +5,15 @@ import 'package:oven_admin/providers/categories_providers/categories_provider.da
 import 'package:oven_admin/providers/products_provider/selected_category_filter.dart';
 
 class DropdownCategories extends ConsumerWidget {
-  const DropdownCategories({super.key});
+  final String itemsCategory;
+  const DropdownCategories({super.key, required this.itemsCategory});
 
   @override
   Widget build(BuildContext context, ref) {
     final categoriesItemsSrc = ref.watch(categoriesProvider);
     final selectedValue = ref.watch(categoriesFilterProvider);
+    final placeholder = itemsCategory.isEmpty ? "filter" : itemsCategory;
+
     return categoriesItemsSrc.when(
       data: (data) {
         return DropdownButtonHideUnderline(
@@ -21,15 +24,11 @@ class DropdownCategories extends ConsumerWidget {
                   (item) => DropdownMenuItem<String>(
                     value: item.name,
                     alignment: Alignment.center,
-                    child: Text(
-                      item.name,
-                      // style: textStyle,
-                      textAlign: TextAlign.center,
-                    ),
+                    child: Text(item.name, textAlign: TextAlign.center),
                   ),
                 )
                 .toList(),
-            value: selectedValue,
+            value: selectedValue ?? placeholder,
             onChanged: (value) => ref
                 .read(categoriesFilterProvider.notifier)
                 .selectedCategory(value),
@@ -42,7 +41,7 @@ class DropdownCategories extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    selectedValue ?? "",
+                    selectedValue ?? itemsCategory,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.labelLarge?.copyWith(
                       color: Theme.of(context).colorScheme.onSurface,

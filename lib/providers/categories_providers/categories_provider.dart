@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 import 'package:http/http.dart' as http;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'categories_provider.g.dart';
@@ -36,14 +37,21 @@ class Category {
   final String slug;
   final String name;
   final String url;
+  final Uint8List? thumbnail;
 
-  Category({required this.slug, required this.name, required this.url});
+  Category({
+    required this.slug,
+    required this.name,
+    required this.url,
+    required this.thumbnail,
+  });
 
   factory Category.fromJson(Map<String, dynamic> json) {
     return Category(
       slug: json['slug'] as String,
       name: json['name'] as String,
       url: json['url'] as String,
+      thumbnail: json['thumbnail'] as Uint8List?,
     );
   }
 }

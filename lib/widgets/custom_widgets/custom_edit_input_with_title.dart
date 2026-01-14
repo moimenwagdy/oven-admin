@@ -16,7 +16,6 @@ class CustomEditInputWithTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
       spacing: 10,
       children: [
         Row(
@@ -32,7 +31,11 @@ class CustomEditInputWithTitle extends StatelessWidget {
             SizedBox(width: 150, height: 50, child: rowPreviewArea),
           ],
         ),
-        if (colPrviewArea != null) colPrviewArea!,
+        if (colPrviewArea != null)
+          SizedBox(
+            width: 400,
+            child: colPrviewArea!,
+          ),
       ],
     );
   }

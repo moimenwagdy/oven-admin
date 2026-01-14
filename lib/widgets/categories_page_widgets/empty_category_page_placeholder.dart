@@ -32,9 +32,10 @@ class EmptyCategoryPagePlaceholder extends ConsumerWidget {
                   .read(editCategoryProvider.notifier)
                   .openCategoryToEdit(
                     Category(
-                      slug: const Uuid().v1().substring(0,6),
+                      slug: const Uuid().v1().substring(0, 6),
                       name: "",
                       url: "",
+                      thumbnail: null,
                     ),
                   );
             },

@@ -13,14 +13,18 @@ class UploadProductDetailsImages extends ConsumerWidget {
     final item = ref.watch(editProductProvider);
     Widget image;
     if (item?.images == null || item!.images!.isEmpty) {
-      image = Image.asset(
-        "lib/assets/logo_larg.png",
-        fit: BoxFit.contain,
-        width: 50,
+      image = Row(
+        children: [
+          Image.asset(
+            "lib/assets/logo_larg.png",
+            fit: BoxFit.contain,
+            width: 50,
+            height: 50,
+          ),
+        ],
       );
     } else {
       image = Wrap(
-        alignment: WrapAlignment.center,
         spacing: 10,
         runSpacing: 10,
         children: item.images!.map((e) {
