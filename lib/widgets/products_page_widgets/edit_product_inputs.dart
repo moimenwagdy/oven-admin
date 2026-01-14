@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:oven_admin/providers/products_provider/products_provider.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_edit_input_with_title.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_text_field.dart';
-import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
 import 'package:oven_admin/widgets/products_page_widgets/dropdown_categories.dart';
-import 'package:oven_admin/widgets/products_page_widgets/upload_image.dart';
+import 'package:oven_admin/widgets/products_page_widgets/upload_cover.dart';
+import 'package:oven_admin/widgets/products_page_widgets/upload_product_details_images.dart';
+import 'package:oven_admin/widgets/products_page_widgets/upload_thumbnail.dart';
+import 'package:oven_admin/widgets/products_page_widgets/video_preview.dart';
 
 class EditProductInputs extends StatelessWidget {
   final TextEditingController idController;
@@ -68,28 +70,10 @@ class EditProductInputs extends StatelessWidget {
             showNameAtTop: false,
           ),
         ),
-        UploadImage(),
-        CustomEditInputWithTitle(
-          name: "Cover image",
-          childWidget: FormSubmitButtom(
-            textChild: "Edit cover image",
-            onPressed: () {},
-          ),
-        ),
-        CustomEditInputWithTitle(
-          name: "Images",
-          childWidget: FormSubmitButtom(
-            textChild: "Edit Images",
-            onPressed: () {},
-          ),
-        ),
-        CustomEditInputWithTitle(
-          name: "Video",
-          childWidget: FormSubmitButtom(
-            textChild: "Edit Video",
-            onPressed: () {},
-          ),
-        ),
+        UploadThumbnail(),
+        UploadCover(),
+        UploadProductDetailsImages(),
+        WebVideoPickerPreview(),
       ],
     );
   }

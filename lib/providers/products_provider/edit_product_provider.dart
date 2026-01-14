@@ -28,4 +28,36 @@ class EditProduct extends _$EditProduct {
       title: current.title,
     );
   }
+
+  void updateCover(Uint8List? cover) {
+    final current = state;
+    if (current == null) return;
+    state = Product(
+      id: current.id,
+      description: current.description,
+      price: current.price,
+      thumbnail: current.thumbnail,
+      categoryId: current.categoryId,
+      cover: cover,
+      images: current.images,
+      video: current.video,
+      title: current.title,
+    );
+  }
+
+  void updateDetailsImages(List<Uint8List>? imagesList) {
+    final current = state;
+    if (current == null) return;
+    state = Product(
+      id: current.id,
+      description: current.description,
+      price: current.price,
+      thumbnail: current.thumbnail,
+      categoryId: current.categoryId,
+      cover: current.cover,
+      images: imagesList,
+      video: current.video,
+      title: current.title,
+    );
+  }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:oven_admin/providers/products_provider/edit_product_provider.dart';
 import 'package:oven_admin/providers/products_provider/products_provider.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
 import 'package:oven_admin/widgets/products_page_widgets/cancel_edit_product_button.dart';
@@ -10,6 +12,7 @@ class EditProductForm extends StatefulWidget {
   @override
   State<EditProductForm> createState() => _EditProductFormState();
 }
+
 class _EditProductFormState extends State<EditProductForm> {
   final _formKey = GlobalKey<FormState>();
   late final TextEditingController idController;
@@ -28,6 +31,7 @@ class _EditProductFormState extends State<EditProductForm> {
       text: widget.productItem.price.toString(),
     );
   }
+
   @override
   void dispose() {
     idController.dispose();
@@ -36,6 +40,7 @@ class _EditProductFormState extends State<EditProductForm> {
     priceController.dispose();
     super.dispose();
   }
+
   @override
   void didUpdateWidget(EditProductForm oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -47,6 +52,7 @@ class _EditProductFormState extends State<EditProductForm> {
       priceController.text = widget.productItem.price.toString();
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -69,7 +75,33 @@ class _EditProductFormState extends State<EditProductForm> {
                 spacing: 20,
                 children: [
                   CancelEditProductButton(),
-                  FormSubmitButtom(textChild: "Submit", onPressed: () {}),
+                  Consumer(
+                    builder: (context, ref, child) {
+                      return FormSubmitButtom(
+                        textChild: "Submit",
+                        onPressed: () {
+                          ref
+                              .read(productsProvider.notifier)
+                              .addProduct(
+                                Product(
+                                  id: idController.text,
+                                  title: titleController.text,
+                                  description: descriptionController.text,
+                                  images: widget.productItem.images,
+                                  thumbnail: widget.productItem.thumbnail,
+                                  price: double.parse(priceController.text),
+                                  categoryId: widget.productItem.categoryId,
+                                  cover: widget.productItem.cover,
+                                ),
+                              );
+                          ref.invalidate(productsProvider);
+                          ref
+                              .read(editProductProvider.notifier)
+                              .closeProductEditform(null);
+                        },
+                      );
+                    },
+                  ),
                 ],
               ),
             ],

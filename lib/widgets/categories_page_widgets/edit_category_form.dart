@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/categories_providers/categories_provider.dart';
+import 'package:oven_admin/providers/categories_providers/edit_category_provider.dart';
 import 'package:oven_admin/widgets/categories_page_widgets/cancel_edit_category_button.dart';
 import 'package:oven_admin/widgets/categories_page_widgets/edit_category_inputs.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
@@ -66,7 +67,28 @@ class _EditCategoryFormState extends ConsumerState<EditCategoryForm> {
             spacing: 20,
             children: [
               CancelEditCategoryButton(),
-              FormSubmitButtom(textChild: "Submit", onPressed: () {}),
+              Consumer(
+                builder: (context, ref, child) {
+                  return FormSubmitButtom(
+                    textChild: "Submit",
+                    onPressed: () {
+                      ref
+                          .read(categoriesProvider.notifier)
+                          .addCategory(
+                            Category(
+                              slug: idController.text,
+                              name: nameController.text,
+                              url: orderController.text,
+                            ),
+                          );
+                      ref.invalidate(categoriesProvider);
+                      ref
+                          .read(editCategoryProvider.notifier)
+                          .closeCategoryEditform(null);
+                    },
+                  );
+                },
+              ),
             ],
           ),
         ],

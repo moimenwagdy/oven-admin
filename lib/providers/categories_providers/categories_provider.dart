@@ -26,6 +26,10 @@ class CategoriesNotifier extends _$CategoriesNotifier {
     state = const AsyncLoading();
     state = await AsyncValue.guard(fetchCategories);
   }
+
+  void addCategory(Category payload) {
+    state.value?.add(payload);
+  }
 }
 
 class Category {

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/products_provider/edit_product_provider.dart';
 import 'package:oven_admin/providers/products_provider/products_provider.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
+import 'package:uuid/uuid.dart';
 
 class EmptyProductPagePlaceholder extends ConsumerWidget {
   const EmptyProductPagePlaceholder({super.key});
@@ -31,14 +32,14 @@ class EmptyProductPagePlaceholder extends ConsumerWidget {
                   .read(editProductProvider.notifier)
                   .openProductToEdit(
                     Product(
-                      id: "",
+                      id: const Uuid().v1().substring(0, 6),
                       title: "",
                       description: "",
                       images: [],
                       thumbnail: null,
                       price: 0,
                       categoryId: "",
-                      cover: "",
+                      cover: null,
                     ),
                   );
             },
