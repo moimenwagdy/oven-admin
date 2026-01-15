@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:oven_admin/providers/products_provider/products_provider.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_edit_input_with_title.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_text_field.dart';
-import 'package:oven_admin/widgets/products_page_widgets/dropdown_categories.dart';
-import 'package:oven_admin/widgets/products_page_widgets/upload_cover.dart';
-import 'package:oven_admin/widgets/products_page_widgets/upload_product_details_images.dart';
-import 'package:oven_admin/widgets/products_page_widgets/upload_thumbnail.dart';
-import 'package:oven_admin/widgets/products_page_widgets/video_preview.dart';
+import 'package:oven_admin/widgets/products_page_widgets/product_form_widgets/dropdown_categories_inside_product_form.dart';
+// import 'package:oven_admin/widgets/products_page_widgets/dropdown_categories.dart';
+import 'package:oven_admin/widgets/products_page_widgets/product_form_widgets/upload_cover.dart';
+import 'package:oven_admin/widgets/products_page_widgets/product_form_widgets/upload_product_details_images.dart';
+import 'package:oven_admin/widgets/products_page_widgets/product_form_widgets/upload_thumbnail.dart';
+import 'package:oven_admin/widgets/products_page_widgets/product_form_widgets/video_preview.dart';
 
 class EditProductInputs extends StatelessWidget {
   final TextEditingController idController;
   final TextEditingController titleController;
   final TextEditingController descriptionController;
   final TextEditingController priceController;
+  final TextEditingController categoryController;
   final Product productItem;
 
   const EditProductInputs({
@@ -22,11 +24,11 @@ class EditProductInputs extends StatelessWidget {
     required this.descriptionController,
     required this.priceController,
     required this.productItem,
+    required this.categoryController,
   });
 
   @override
   Widget build(BuildContext context) {
-    print(productItem.categoryId);
     return Column(
       spacing: 10,
       children: [
@@ -42,8 +44,8 @@ class EditProductInputs extends StatelessWidget {
         ),
         CustomEditInputWithTitle(
           name: "Category",
-          childWidget: DropdownCategories(
-            itemsCategory: productItem.categoryId,
+          childWidget: DropdownCategoriesInsideProductForm(
+            controller: categoryController,
           ),
         ),
         CustomEditInputWithTitle(

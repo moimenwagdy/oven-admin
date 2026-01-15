@@ -18,6 +18,11 @@ class ProductsNotifier extends _$ProductsNotifier {
   void addProduct(Product payload) {
     englishProducts.add(payload);
   }
+
+  void deletePRoduct(String payload) {
+    final index = englishProducts.indexWhere((r) => r.id == payload);
+    englishProducts.remove(englishProducts[index]);
+  }
 }
 
 class Product {

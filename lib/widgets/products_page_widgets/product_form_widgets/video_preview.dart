@@ -10,7 +10,6 @@ class WebVideoPickerPreview extends StatefulWidget {
   @override
   State<WebVideoPickerPreview> createState() => _WebVideoPickerPreviewState();
 }
-
 class _WebVideoPickerPreviewState extends State<WebVideoPickerPreview> {
   VideoPlayerController? _controller;
   String? _videoUrl;
@@ -19,20 +18,14 @@ class _WebVideoPickerPreviewState extends State<WebVideoPickerPreview> {
   void pickVideo() {
     final uploadInput = html.FileUploadInputElement()..accept = 'video/*';
     uploadInput.click();
-
     uploadInput.onChange.listen((event) async {
       final files = uploadInput.files;
       if (files == null || files.isEmpty) return;
-
       final file = files[0];
-
       setState(() {
         _loading = true;
       });
-
       final url = html.Url.createObjectUrl(file);
-
-      // Dispose previous controller
       _controller?.dispose();
 
       _controller = VideoPlayerController.networkUrl(Uri.parse(url));

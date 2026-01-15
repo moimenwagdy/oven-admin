@@ -3,8 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/products_provider/edit_product_provider.dart';
 import 'package:oven_admin/providers/products_provider/products_provider.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
-import 'package:oven_admin/widgets/products_page_widgets/cancel_edit_product_button.dart';
-import 'package:oven_admin/widgets/products_page_widgets/edit_product_inputs.dart';
+import 'package:oven_admin/widgets/products_page_widgets/product_form_widgets/cancel_edit_product_button.dart';
+import 'package:oven_admin/widgets/products_page_widgets/product_form_widgets/delete_item_button.dart';
+import 'package:oven_admin/widgets/products_page_widgets/product_form_widgets/edit_product_inputs.dart';
 
 class EditProductForm extends StatefulWidget {
   final Product productItem;
@@ -19,6 +20,7 @@ class _EditProductFormState extends State<EditProductForm> {
   late final TextEditingController titleController;
   late final TextEditingController descriptionController;
   late final TextEditingController priceController;
+  late final TextEditingController categoryController;
   @override
   void initState() {
     super.initState();
@@ -29,6 +31,9 @@ class _EditProductFormState extends State<EditProductForm> {
     );
     priceController = TextEditingController(
       text: widget.productItem.price.toString(),
+    );
+    categoryController = TextEditingController(
+      text: widget.productItem.categoryId,
     );
   }
 
@@ -49,6 +54,7 @@ class _EditProductFormState extends State<EditProductForm> {
       idController.text = widget.productItem.id;
       titleController.text = widget.productItem.title;
       descriptionController.text = widget.productItem.description;
+      categoryController.text = widget.productItem.categoryId;
       priceController.text = widget.productItem.price.toString();
     }
   }
@@ -67,6 +73,7 @@ class _EditProductFormState extends State<EditProductForm> {
                 idController: idController,
                 titleController: titleController,
                 descriptionController: descriptionController,
+                categoryController: categoryController,
                 priceController: priceController,
                 productItem: widget.productItem,
               ),
@@ -74,6 +81,7 @@ class _EditProductFormState extends State<EditProductForm> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 spacing: 20,
                 children: [
+                  DeleteItemButton(productId: widget.productItem.id),
                   CancelEditProductButton(),
                   Consumer(
                     builder: (context, ref, child) {
@@ -90,7 +98,7 @@ class _EditProductFormState extends State<EditProductForm> {
                                   images: widget.productItem.images,
                                   thumbnail: widget.productItem.thumbnail,
                                   price: double.parse(priceController.text),
-                                  categoryId: widget.productItem.categoryId,
+                                  categoryId: categoryController.text,
                                   cover: widget.productItem.cover,
                                 ),
                               );
