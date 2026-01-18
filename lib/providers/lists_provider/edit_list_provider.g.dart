@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'edit_product_provider.dart';
+part of 'edit_list_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,52 +9,52 @@ part of 'edit_product_provider.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(EditProduct)
-const editProductProvider = EditProductProvider._();
+@ProviderFor(EditList)
+const editListProvider = EditListProvider._();
 
-final class EditProductProvider
-    extends $NotifierProvider<EditProduct, Product?> {
-  const EditProductProvider._()
+final class EditListProvider
+    extends $NotifierProvider<EditList, ProductsList?> {
+  const EditListProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'editProductProvider',
+        name: r'editListProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$editProductHash();
+  String debugGetCreateSourceHash() => _$editListHash();
 
   @$internal
   @override
-  EditProduct create() => EditProduct();
+  EditList create() => EditList();
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(Product? value) {
+  Override overrideWithValue(ProductsList? value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<Product?>(value),
+      providerOverride: $SyncValueProvider<ProductsList?>(value),
     );
   }
 }
 
-String _$editProductHash() => r'998410fc9f89d7ba2c6f486a40ece0184349061d';
+String _$editListHash() => r'63705cef01d674db142c13221fee9ef1366b5d9d';
 
-abstract class _$EditProduct extends $Notifier<Product?> {
-  Product? build();
+abstract class _$EditList extends $Notifier<ProductsList?> {
+  ProductsList? build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<Product?, Product?>;
+    final ref = this.ref as $Ref<ProductsList?, ProductsList?>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<Product?, Product?>,
-              Product?,
+              AnyNotifier<ProductsList?, ProductsList?>,
+              ProductsList?,
               Object?,
               Object?
             >;

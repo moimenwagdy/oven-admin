@@ -26,6 +26,7 @@ class EditProduct extends _$EditProduct {
       images: current.images,
       video: current.video,
       title: current.title,
+      discount: current.discount,
     );
   }
 
@@ -42,6 +43,7 @@ class EditProduct extends _$EditProduct {
       images: current.images,
       video: current.video,
       title: current.title,
+      discount: current.discount,
     );
   }
 
@@ -58,6 +60,24 @@ class EditProduct extends _$EditProduct {
       images: imagesList,
       video: current.video,
       title: current.title,
+      discount: current.discount,
+    );
+  }
+
+  void updateDiscount(double discount) {
+    final current = state;
+    if (current == null) return;
+    state = Product(
+      id: current.id,
+      description: current.description,
+      price: current.price,
+      thumbnail: current.thumbnail,
+      categoryId: current.categoryId,
+      cover: current.cover,
+      images: current.images,
+      video: current.video,
+      title: current.title,
+      discount: discount,
     );
   }
 }

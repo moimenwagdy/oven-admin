@@ -15,6 +15,8 @@ class EditProductInputs extends StatelessWidget {
   final TextEditingController descriptionController;
   final TextEditingController priceController;
   final TextEditingController categoryController;
+  final TextEditingController discountCotroller;
+
   final Product productItem;
 
   const EditProductInputs({
@@ -25,6 +27,7 @@ class EditProductInputs extends StatelessWidget {
     required this.priceController,
     required this.productItem,
     required this.categoryController,
+    required this.discountCotroller,
   });
 
   @override
@@ -72,6 +75,15 @@ class EditProductInputs extends StatelessWidget {
             controller: priceController,
             name: "price",
             inputType: TextInputType.text,
+            showNameAtTop: false,
+          ),
+        ),
+        CustomEditInputWithTitle(
+          name: "discount",
+          childWidget: CustomTextField(
+            controller: discountCotroller,
+            name: "dicount",
+            inputType: TextInputType.number,
             showNameAtTop: false,
           ),
         ),

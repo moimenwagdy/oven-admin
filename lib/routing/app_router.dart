@@ -35,7 +35,8 @@ final GoRouter appRouter = GoRouter(
         ),
         GoRoute(
           path: "/categories",
-          builder: (context, state) => CategoriesPage(),
+          pageBuilder: (context, state) =>
+              NoTransitionPage(child: CategoriesPage()),
         ),
         GoRoute(
           path: '/products',

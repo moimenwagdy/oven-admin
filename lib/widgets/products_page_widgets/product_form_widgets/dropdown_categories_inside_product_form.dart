@@ -19,6 +19,16 @@ class DropdownCategoriesInsideProductForm extends ConsumerWidget {
           dropdownMenuEntries: data.map((ele) {
             return DropdownMenuEntry(value: ele.name, label: ele.name);
           }).toList(),
+          enableSearch: true,
+          inputDecorationTheme: InputDecorationTheme(
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.primary,
+                width: 1,
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+            ),
+          ),
         );
       },
       loading: () => SizedBox(

@@ -7,7 +7,6 @@ import 'package:oven_admin/widgets/products_page_widgets/empty_product_page_plac
 
 class ProductFormContainer extends ConsumerWidget {
   const ProductFormContainer({super.key});
-
   @override
   Widget build(BuildContext context, ref) {
     final productItem = ref.watch(editProductProvider);

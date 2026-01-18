@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:flutter/foundation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'products_provider.g.dart';
 
@@ -30,6 +31,7 @@ class Product {
   final String title;
   final String description;
   final double price;
+  final double? discount;
   final List<Uint8List>? images;
   final Uint8List? thumbnail;
   final String categoryId;
@@ -43,6 +45,7 @@ class Product {
     required this.images,
     required this.thumbnail,
     required this.price,
+    required this.discount,
     required this.categoryId,
     required this.cover,
     this.video,
@@ -60,6 +63,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .10,
   ),
   Product(
     id: "2",
@@ -71,6 +75,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .12,
   ),
   Product(
     id: "3",
@@ -82,6 +87,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .15,
   ),
   Product(
     id: "4",
@@ -93,6 +99,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .20,
   ),
   Product(
     id: "5",
@@ -104,6 +111,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .10,
   ),
   Product(
     id: "6",
@@ -115,6 +123,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .08,
   ),
 
   // Fragrances (4–6)
@@ -128,6 +137,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .05,
   ),
   Product(
     id: "8",
@@ -139,6 +149,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .05,
   ),
   Product(
     id: "9",
@@ -150,6 +161,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: 0.7,
   ),
   Product(
     id: "10",
@@ -161,6 +173,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: null,
   ),
   Product(
     id: "11",
@@ -172,6 +185,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .05,
   ),
   Product(
     id: "12",
@@ -183,6 +197,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .15,
   ),
 
   // Furniture (7–9)
@@ -196,6 +211,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: null,
   ),
   Product(
     id: "1400",
@@ -207,6 +223,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: null,
   ),
   Product(
     id: "14",
@@ -218,6 +235,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .03,
   ),
   Product(
     id: "15",
@@ -229,6 +247,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: null,
   ),
   Product(
     id: "16",
@@ -240,6 +259,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .15,
   ),
   Product(
     id: "17",
@@ -251,6 +271,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .08,
   ),
 
   // Groceries (10–12)
@@ -264,6 +285,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: null,
   ),
   Product(
     id: "19",
@@ -275,6 +297,7 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .12,
   ),
   Product(
     id: "20",
@@ -286,5 +309,6 @@ final List<Product> englishProducts = [
     video: "",
     thumbnail: null,
     cover: null,
+    discount: .15,
   ),
 ];

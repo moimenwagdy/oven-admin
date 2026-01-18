@@ -21,6 +21,7 @@ class _EditProductFormState extends State<EditProductForm> {
   late final TextEditingController descriptionController;
   late final TextEditingController priceController;
   late final TextEditingController categoryController;
+  late final TextEditingController discountCotroller;
   @override
   void initState() {
     super.initState();
@@ -35,6 +36,11 @@ class _EditProductFormState extends State<EditProductForm> {
     categoryController = TextEditingController(
       text: widget.productItem.categoryId,
     );
+    discountCotroller = TextEditingController(
+      text: widget.productItem.discount == null
+          ? 0.toString()
+          : widget.productItem.discount.toString(),
+    );
   }
 
   @override
@@ -43,6 +49,7 @@ class _EditProductFormState extends State<EditProductForm> {
     titleController.dispose();
     descriptionController.dispose();
     priceController.dispose();
+    discountCotroller.dispose();
     super.dispose();
   }
 
@@ -56,6 +63,9 @@ class _EditProductFormState extends State<EditProductForm> {
       descriptionController.text = widget.productItem.description;
       categoryController.text = widget.productItem.categoryId;
       priceController.text = widget.productItem.price.toString();
+      discountCotroller.text = widget.productItem.discount == null
+          ? 0.toString()
+          : widget.productItem.discount.toString();
     }
   }
 
@@ -75,6 +85,7 @@ class _EditProductFormState extends State<EditProductForm> {
                 descriptionController: descriptionController,
                 categoryController: categoryController,
                 priceController: priceController,
+                discountCotroller: discountCotroller,
                 productItem: widget.productItem,
               ),
               Row(
@@ -100,6 +111,9 @@ class _EditProductFormState extends State<EditProductForm> {
                                   price: double.parse(priceController.text),
                                   categoryId: categoryController.text,
                                   cover: widget.productItem.cover,
+                                  discount: double.parse(
+                                    discountCotroller.text,
+                                  ),
                                 ),
                               );
                           ref.invalidate(productsProvider);

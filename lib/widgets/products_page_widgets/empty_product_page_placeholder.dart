@@ -40,6 +40,7 @@ class EmptyProductPagePlaceholder extends ConsumerWidget {
                       price: 0,
                       categoryId: "",
                       cover: null,
+                      discount: null,
                     ),
                   );
             },

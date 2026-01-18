@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'products_provider.dart';
+part of 'lists_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,44 +9,45 @@ part of 'products_provider.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(ProductsNotifier)
-const productsProvider = ProductsNotifierProvider._();
+@ProviderFor(ListsNotifier)
+const listsProvider = ListsNotifierProvider._();
 
-final class ProductsNotifierProvider
-    extends $AsyncNotifierProvider<ProductsNotifier, List<Product>> {
-  const ProductsNotifierProvider._()
+final class ListsNotifierProvider
+    extends $AsyncNotifierProvider<ListsNotifier, List<ProductsList>> {
+  const ListsNotifierProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'productsProvider',
+        name: r'listsProvider',
         isAutoDispose: false,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$productsNotifierHash();
+  String debugGetCreateSourceHash() => _$listsNotifierHash();
 
   @$internal
   @override
-  ProductsNotifier create() => ProductsNotifier();
+  ListsNotifier create() => ListsNotifier();
 }
 
-String _$productsNotifierHash() => r'f31cb7df6965d8394daf1643224a50a4cef7b66d';
+String _$listsNotifierHash() => r'9cbc237a895108ea423c580f4a0735ac98705649';
 
-abstract class _$ProductsNotifier extends $AsyncNotifier<List<Product>> {
-  FutureOr<List<Product>> build();
+abstract class _$ListsNotifier extends $AsyncNotifier<List<ProductsList>> {
+  FutureOr<List<ProductsList>> build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<AsyncValue<List<Product>>, List<Product>>;
+    final ref =
+        this.ref as $Ref<AsyncValue<List<ProductsList>>, List<ProductsList>>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<AsyncValue<List<Product>>, List<Product>>,
-              AsyncValue<List<Product>>,
+              AnyNotifier<AsyncValue<List<ProductsList>>, List<ProductsList>>,
+              AsyncValue<List<ProductsList>>,
               Object?,
               Object?
             >;
