@@ -35,6 +35,7 @@ class ProductsList {
   });
 }
 
+
 final List<ProductsList> productsLists = [
   ProductsList(
     listHeader: "In others favorites",
