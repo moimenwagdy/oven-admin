@@ -9,4 +9,6 @@ class EditList extends _$EditList {
 
   void openListToEdit(ProductsList? productsList) => state = productsList;
   void closeListEditform(ProductsList? productsList) => state = null;
+
+
 }

@@ -50,6 +50,7 @@ class _FormOfProductsListState extends State<FormOfProductsList> {
           InputsOfProductsList(
             headerController: headerController,
             idController: idController,
+            products: widget.item.prodcuts,
           ),
           Row(
             children: [
