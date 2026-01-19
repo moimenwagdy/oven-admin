@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/products_provider/edit_product_provider.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/utils/helpers/web_image_picker.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_edit_input_with_title.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
@@ -33,9 +34,9 @@ class UploadProductDetailsImages extends ConsumerWidget {
       );
     }
     return CustomEditInputWithTitle(
-      name: "details images",
+      name: context.l10n.detailsImages,
       childWidget: FormSubmitButtom(
-        textChild: "Edit images",
+        textChild: context.l10n.editDetailsImages,
         onPressed: () async {
           final file = await pickMultiImage();
           if (file != null) {

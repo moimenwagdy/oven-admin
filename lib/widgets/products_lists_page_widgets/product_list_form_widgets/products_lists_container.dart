@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/lists_provider/edit_list_provider.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_header.dart';
 import 'package:oven_admin/widgets/products_lists_page_widgets/empty_products_lists_page_placeholer.dart';
-import 'package:oven_admin/widgets/products_lists_page_widgets/form_of_products_list.dart';
+import 'package:oven_admin/widgets/products_lists_page_widgets/product_list_form_widgets/form_of_products_list.dart';
 
 class ProductsListsContainer extends ConsumerWidget {
   const ProductsListsContainer({super.key});

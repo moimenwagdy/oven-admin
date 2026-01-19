@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/lists_provider/lists_provider.dart';
 import 'package:oven_admin/utils/helpers/screen_dimensions.dart';
-import 'package:oven_admin/widgets/products_lists_page_widgets/list_item_of_products_lists.dart';
+import 'package:oven_admin/widgets/products_lists_page_widgets/list_of_products_lists_widget/list_item_of_products_lists.dart';
 
 class ListsOfProductsLists extends ConsumerWidget {
   const ListsOfProductsLists({super.key});

@@ -17,7 +17,7 @@ class EmptyProductsListsPagePlaceholer extends ConsumerWidget {
         Column(
           children: [
             Text(
-              "Edit Lists",
+              "Edit Lists Section",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
             Text("Select List To Edit", style: TextStyle(fontSize: 12)),

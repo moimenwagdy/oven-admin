@@ -1,5 +1,6 @@
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_edit_input_with_title.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
 import 'package:video_player/video_player.dart';
@@ -10,6 +11,7 @@ class WebVideoPickerPreview extends StatefulWidget {
   @override
   State<WebVideoPickerPreview> createState() => _WebVideoPickerPreviewState();
 }
+
 class _WebVideoPickerPreviewState extends State<WebVideoPickerPreview> {
   VideoPlayerController? _controller;
   String? _videoUrl;
@@ -67,9 +69,9 @@ class _WebVideoPickerPreviewState extends State<WebVideoPickerPreview> {
       );
     }
     return CustomEditInputWithTitle(
-      name: "Video",
+      name: context.l10n.video,
       childWidget: FormSubmitButtom(
-        textChild: "Edit Video",
+        textChild: context.l10n.addVideo,
         onPressed: pickVideo,
       ),
       rowPreviewArea: previewWidget,

@@ -14,12 +14,24 @@ class ListsNotifier extends _$ListsNotifier {
     return productsLists;
   }
 
-  void addProduct(ProductsList payload) {
-    productsLists.add(payload);
+  void addList(ProductsList payload) {
+    final current = state.value;
+    if (current == null) return;
+
+    final index = current.indexWhere((item) => item.listID == payload.listID);
+    if (index == -1) {
+      current.add(payload);
+    } else {
+      current.removeAt(index);
+      current.add(payload);
+    }
   }
 
-  void deletePRoduct(String payload) {
-    final index = productsLists.indexWhere((r) => r.listID == payload);
+  void deleteList(String listId) {
+    final current = state.value;
+    if (current == null) return;
+
+    final index = productsLists.indexWhere((r) => r.listID == listId);
     productsLists.remove(productsLists[index]);
   }
 }
@@ -35,11 +47,10 @@ class ProductsList {
   });
 }
 
-
 final List<ProductsList> productsLists = [
   ProductsList(
     listHeader: "In others favorites",
-    prodcuts: englishProducts.sublist(0, 8),
+    prodcuts: englishProducts.sublist(0, 8).toList(),
     listID: "F1E43S",
   ),
   ProductsList(

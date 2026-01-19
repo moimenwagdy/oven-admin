@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oven_admin/providers/products_provider/products_provider.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_edit_input_with_title.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_text_field.dart';
 import 'package:oven_admin/widgets/products_page_widgets/product_form_widgets/dropdown_categories_inside_product_form.dart';
@@ -46,43 +47,43 @@ class EditProductInputs extends StatelessWidget {
           ),
         ),
         CustomEditInputWithTitle(
-          name: "Category",
+          name: context.l10n.categoriesTab,
           childWidget: DropdownCategoriesInsideProductForm(
             controller: categoryController,
           ),
         ),
         CustomEditInputWithTitle(
-          name: "Title",
+          name: context.l10n.title,
           childWidget: CustomTextField(
             controller: titleController,
-            name: "Title",
+            name: context.l10n.title,
             inputType: TextInputType.text,
             showNameAtTop: false,
           ),
         ),
         CustomEditInputWithTitle(
-          name: "Description",
+          name: context.l10n.description,
           childWidget: CustomTextField(
             controller: descriptionController,
-            name: "Description",
+            name: context.l10n.description,
             inputType: TextInputType.text,
             showNameAtTop: false,
           ),
         ),
         CustomEditInputWithTitle(
-          name: "price",
+          name: context.l10n.price,
           childWidget: CustomTextField(
             controller: priceController,
-            name: "price",
+            name: context.l10n.price,
             inputType: TextInputType.text,
             showNameAtTop: false,
           ),
         ),
         CustomEditInputWithTitle(
-          name: "discount",
+          name: context.l10n.discount,
           childWidget: CustomTextField(
             controller: discountCotroller,
-            name: "dicount",
+            name: context.l10n.discount,
             inputType: TextInputType.number,
             showNameAtTop: false,
           ),

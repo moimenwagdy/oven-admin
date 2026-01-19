@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:oven_admin/providers/lists_provider/lists_provider.dart';
-import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
-import 'package:oven_admin/widgets/products_lists_page_widgets/inputs_of_products_list.dart';
+import 'package:oven_admin/widgets/products_lists_page_widgets/product_list_form_widgets/cancel_editing_list.dart';
+import 'package:oven_admin/widgets/products_lists_page_widgets/product_list_form_widgets/delete_list_button.dart';
+import 'package:oven_admin/widgets/products_lists_page_widgets/product_list_form_widgets/inputs_of_products_list.dart';
+import 'package:oven_admin/widgets/products_lists_page_widgets/product_list_form_widgets/list_form_submit_button.dart';
 
 class FormOfProductsList extends StatefulWidget {
   final ProductsList item;
   const FormOfProductsList({super.key, required this.item});
-
   @override
   State<FormOfProductsList> createState() => _FormOfProductsListState();
 }
@@ -53,10 +54,15 @@ class _FormOfProductsListState extends State<FormOfProductsList> {
             products: widget.item.prodcuts,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 20,
             children: [
-              FormSubmitButtom(textChild: "Submit"),
-              FormSubmitButtom(textChild: "Cancel"),
-              FormSubmitButtom(textChild: "delete"),
+              DeleteListButton(listId: idController.text),
+              CancelEditingList(),
+              ListFormSubmitButton(
+                idController: idController,
+                headerController: headerController,
+              ),
             ],
           ),
         ],

@@ -167,6 +167,18 @@ abstract class AppLocalizations {
   /// **'Submit'**
   String get submit;
 
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
   /// No description provided for @welcomeMessage.
   ///
   /// In en, this message translates to:
@@ -184,6 +196,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Language'**
   String get language;
+
+  /// No description provided for @addNewCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Category'**
+  String get addNewCategory;
+
+  /// No description provided for @addNewProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Product'**
+  String get addNewProduct;
+
+  /// No description provided for @addNewList.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New List'**
+  String get addNewList;
+
+  /// No description provided for @title.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get title;
+
+  /// No description provided for @description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get description;
+
+  /// No description provided for @price.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get price;
+
+  /// No description provided for @discount.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount'**
+  String get discount;
+
+  /// No description provided for @thumbnail.
+  ///
+  /// In en, this message translates to:
+  /// **'Thumbnail'**
+  String get thumbnail;
+
+  /// No description provided for @editThumbnail.
+  ///
+  /// In en, this message translates to:
+  /// **' Edit Thumbnail'**
+  String get editThumbnail;
+
+  /// No description provided for @cover.
+  ///
+  /// In en, this message translates to:
+  /// **'Cover'**
+  String get cover;
+
+  /// No description provided for @editCover.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Cover'**
+  String get editCover;
+
+  /// No description provided for @detailsImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Details Images'**
+  String get detailsImages;
+
+  /// No description provided for @editDetailsImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Images'**
+  String get editDetailsImages;
+
+  /// No description provided for @addVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Video'**
+  String get addVideo;
+
+  /// No description provided for @video.
+  ///
+  /// In en, this message translates to:
+  /// **'Video'**
+  String get video;
+
+  /// No description provided for @noVideoSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'No Video Selected'**
+  String get noVideoSelected;
+
+  /// No description provided for @categoryName.
+  ///
+  /// In en, this message translates to:
+  /// **'Category Name'**
+  String get categoryName;
+
+  /// No description provided for @categoryOrderByNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Order'**
+  String get categoryOrderByNumber;
+
+  /// No description provided for @listHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Header'**
+  String get listHeader;
+
+  /// No description provided for @productsList.
+  ///
+  /// In en, this message translates to:
+  /// **'Products List'**
+  String get productsList;
+
+  /// No description provided for @selectItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Items'**
+  String get selectItems;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

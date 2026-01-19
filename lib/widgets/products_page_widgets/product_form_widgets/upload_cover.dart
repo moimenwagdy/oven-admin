@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/products_provider/edit_product_provider.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/utils/helpers/web_image_picker.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_edit_input_with_title.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
@@ -15,9 +16,9 @@ class UploadCover extends ConsumerWidget {
         ? Image.asset("lib/assets/logo_larg.png", fit: BoxFit.contain)
         : Image.memory(item!.cover!);
     return CustomEditInputWithTitle(
-      name: "Cover",
+      name: context.l10n.cover,
       childWidget: FormSubmitButtom(
-        textChild: "Edit Cover",
+        textChild: context.l10n.editCover,
         onPressed: () async {
           final file = await pickImage();
           if (file != null) {

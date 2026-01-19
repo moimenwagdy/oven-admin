@@ -45,6 +45,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get submit => 'Submit';
 
   @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
   String get welcomeMessage => 'Welcome to Oven Admin Dashboard';
 
   @override
@@ -52,4 +58,67 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get language => 'Language';
+
+  @override
+  String get addNewCategory => 'Add New Category';
+
+  @override
+  String get addNewProduct => 'Add New Product';
+
+  @override
+  String get addNewList => 'Add New List';
+
+  @override
+  String get title => 'Title';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get price => 'Price';
+
+  @override
+  String get discount => 'Discount';
+
+  @override
+  String get thumbnail => 'Thumbnail';
+
+  @override
+  String get editThumbnail => ' Edit Thumbnail';
+
+  @override
+  String get cover => 'Cover';
+
+  @override
+  String get editCover => 'Edit Cover';
+
+  @override
+  String get detailsImages => 'Details Images';
+
+  @override
+  String get editDetailsImages => 'Edit Images';
+
+  @override
+  String get addVideo => 'Add Video';
+
+  @override
+  String get video => 'Video';
+
+  @override
+  String get noVideoSelected => 'No Video Selected';
+
+  @override
+  String get categoryName => 'Category Name';
+
+  @override
+  String get categoryOrderByNumber => 'Order';
+
+  @override
+  String get listHeader => 'Header';
+
+  @override
+  String get productsList => 'Products List';
+
+  @override
+  String get selectItems => 'Select Items';
 }

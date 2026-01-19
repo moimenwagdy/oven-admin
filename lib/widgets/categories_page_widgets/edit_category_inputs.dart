@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oven_admin/providers/categories_providers/upload_category_thumbnail.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_edit_input_with_title.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_text_field.dart';
 
@@ -30,20 +31,20 @@ class EditCategoryInputs extends StatelessWidget {
           ),
         ),
         CustomEditInputWithTitle(
-          name: "Name",
+          name: context.l10n.categoryName,
           childWidget: CustomTextField(
             controller: nameController,
             inputType: TextInputType.text,
-            name: "Name",
+            name: context.l10n.categoryName,
             showNameAtTop: false,
           ),
         ),
         CustomEditInputWithTitle(
-          name: "Order",
+          name: context.l10n.categoryOrderByNumber,
           childWidget: CustomTextField(
             controller: orderController,
             inputType: TextInputType.text,
-            name: "Order",
+            name: context.l10n.categoryOrderByNumber,
             showNameAtTop: false,
           ),
         ),

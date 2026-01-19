@@ -1,8 +1,9 @@
 import 'package:oven_admin/providers/products_provider/products_provider.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_edit_input_with_title.dart';
 import 'package:oven_admin/widgets/custom_widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:oven_admin/widgets/products_lists_page_widgets/products_selections.dart';
+import 'package:oven_admin/widgets/products_lists_page_widgets/product_list_form_widgets/products_selections.dart';
 
 class InputsOfProductsList extends StatelessWidget {
   final TextEditingController headerController;
@@ -30,17 +31,17 @@ class InputsOfProductsList extends StatelessWidget {
           ),
         ),
         CustomEditInputWithTitle(
-          name: "Header",
+          name: context.l10n.listHeader,
           childWidget: CustomTextField(
             controller: headerController,
-            name: "Header",
+            name: context.l10n.listHeader,
             inputType: TextInputType.text,
             showNameAtTop: false,
           ),
         ),
         CustomEditInputWithTitle(
-          name: "Products",
-          childWidget: ProductsSelections(exiseListItems: products),
+          name: context.l10n.productsList,
+          childWidget: ProductsSelections(),
         ),
       ],
     );

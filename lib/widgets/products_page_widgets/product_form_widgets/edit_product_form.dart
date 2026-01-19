@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/products_provider/edit_product_provider.dart';
 import 'package:oven_admin/providers/products_provider/products_provider.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
 import 'package:oven_admin/widgets/products_page_widgets/product_form_widgets/cancel_edit_product_button.dart';
 import 'package:oven_admin/widgets/products_page_widgets/product_form_widgets/delete_item_button.dart';
@@ -92,12 +93,10 @@ class _EditProductFormState extends State<EditProductForm> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 spacing: 20,
                 children: [
-                  DeleteItemButton(productId: widget.productItem.id),
-                  CancelEditProductButton(),
                   Consumer(
                     builder: (context, ref, child) {
                       return FormSubmitButtom(
-                        textChild: "Submit",
+                        textChild: context.l10n.submit,
                         onPressed: () {
                           ref
                               .read(productsProvider.notifier)
@@ -124,6 +123,8 @@ class _EditProductFormState extends State<EditProductForm> {
                       );
                     },
                   ),
+                  CancelEditProductButton(),
+                  DeleteItemButton(productId: widget.productItem.id),
                 ],
               ),
             ],
