@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'edit_list_provider.dart';
+part of 'orders_filter.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,52 +9,53 @@ part of 'edit_list_provider.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(EditList)
-const editListProvider = EditListProvider._();
+@ProviderFor(OrdersFilterNofifier)
+const ordersFilterNofifierProvider = OrdersFilterNofifierProvider._();
 
-final class EditListProvider
-    extends $NotifierProvider<EditList, ProductsList?> {
-  const EditListProvider._()
+final class OrdersFilterNofifierProvider
+    extends $NotifierProvider<OrdersFilterNofifier, OrdersFilter> {
+  const OrdersFilterNofifierProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'editListProvider',
+        name: r'ordersFilterNofifierProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$editListHash();
+  String debugGetCreateSourceHash() => _$ordersFilterNofifierHash();
 
   @$internal
   @override
-  EditList create() => EditList();
+  OrdersFilterNofifier create() => OrdersFilterNofifier();
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(ProductsList? value) {
+  Override overrideWithValue(OrdersFilter value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<ProductsList?>(value),
+      providerOverride: $SyncValueProvider<OrdersFilter>(value),
     );
   }
 }
 
-String _$editListHash() => r'0b43d2be15ae4be55aee3f9b4643929617aa7a11';
+String _$ordersFilterNofifierHash() =>
+    r'77708146a2981704265244d19c1a7529dd60aa04';
 
-abstract class _$EditList extends $Notifier<ProductsList?> {
-  ProductsList? build();
+abstract class _$OrdersFilterNofifier extends $Notifier<OrdersFilter> {
+  OrdersFilter build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<ProductsList?, ProductsList?>;
+    final ref = this.ref as $Ref<OrdersFilter, OrdersFilter>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<ProductsList?, ProductsList?>,
-              ProductsList?,
+              AnyNotifier<OrdersFilter, OrdersFilter>,
+              OrdersFilter,
               Object?,
               Object?
             >;
