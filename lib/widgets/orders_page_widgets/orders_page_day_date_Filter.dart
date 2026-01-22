@@ -4,8 +4,8 @@ import 'package:oven_admin/providers/orders_provider/orders_filter.dart';
 import 'package:oven_admin/utils/helpers/reformat_date.dart';
 import 'package:oven_admin/utils/helpers/screen_dimensions.dart';
 
-class OrdersPageDateFilter extends ConsumerWidget {
-  const OrdersPageDateFilter({super.key});
+class OrdersPageDayDateFilter extends ConsumerWidget {
+  const OrdersPageDayDateFilter({super.key});
 
   Future<void> _pickDate(BuildContext context, WidgetRef ref) async {
     final selectedDate = ref.read(ordersFilterNofifierProvider).dayDate;
@@ -30,7 +30,7 @@ class OrdersPageDateFilter extends ConsumerWidget {
     if (pickedDate != null) {
       ref
           .read(ordersFilterNofifierProvider.notifier)
-          .updateDateFilter(pickedDate);
+          .updateDayDateFilter(pickedDate);
     }
   }
 
@@ -45,8 +45,8 @@ class OrdersPageDateFilter extends ConsumerWidget {
           await _pickDate(context, ref);
         },
         child: Container(
-          width: context.isSmallDevice ? 150 : 210,
-          height: context.isSmallDevice ? 50 : 50,
+          width: context.isSmallDevice ? 150 : 220,
+          height: 50,
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -71,7 +71,7 @@ class OrdersPageDateFilter extends ConsumerWidget {
                   onPressed: () {
                     ref
                         .read(ordersFilterNofifierProvider.notifier)
-                        .updateDateFilter(null);
+                        .updateDayDateFilter(null);
                   },
 
                   icon: Icon(Icons.close, size: 15),

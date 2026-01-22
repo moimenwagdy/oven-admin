@@ -9,7 +9,7 @@ class OrdersFilterNofifier extends _$OrdersFilterNofifier {
     return OrdersFilter();
   }
 
-  void updateDateFilter(DateTime? value) {
+  void updateDayDateFilter(DateTime? value) {
     final current = state;
     state = OrdersFilter(
       dayDate: value,

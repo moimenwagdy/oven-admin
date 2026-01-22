@@ -12,7 +12,7 @@ class OrdersPageStatusFilter extends ConsumerWidget {
     final selectedValue = ref.watch(ordersFilterNofifierProvider).status;
     return SizedBox(
       height: 50,
-      width: 200,
+      width: 220,
       child: DropdownButtonHideUnderline(
         child: DropdownButton2<String>(
           isExpanded: true,
