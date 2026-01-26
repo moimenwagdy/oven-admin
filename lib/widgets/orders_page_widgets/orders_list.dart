@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:oven_admin/providers/orders_provider/orders_provider.dart';
+import 'package:oven_admin/providers/orders_provider/filtered_orders.dart';
 import 'package:oven_admin/widgets/orders_page_widgets/order_item_content.dart';
 
 class OrdersList extends ConsumerWidget {
   const OrdersList({super.key});
   @override
   Widget build(BuildContext context, ref) {
-    final ordersSrc = ref.watch(ordersProvider);
-    // final filter = ref.watch(ordersFilterNofifierProvider);
-
+    final ordersSrc = ref.watch(filteredOrdersProvider);
     return ordersSrc.when(
       data: ((data) {
-        return ListView.separated(
+        return ListView.builder(
           itemCount: data.length,
-          separatorBuilder: (context, index) {
-            return SizedBox(height: 5);
-          },
           itemBuilder: (context, index) {
             final item = data[index];
             return OrderItemContent(order: item);

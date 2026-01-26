@@ -42,7 +42,7 @@ class ProductsList extends ConsumerWidget {
         );
       },
       loading: () => SizedBox(
-        width: 200,
+        width: 250,
         child: Center(
           child: SizedBox(
             width: 20,

@@ -24,7 +24,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get imagesTab => 'الصور';
 
   @override
-  String get accountsTab => 'الحسابات';
+  String get accountsTab => 'حسابات المستخدمين';
 
   @override
   String get rulesTab => 'القواعد';
@@ -121,4 +121,52 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get selectItems => 'إختر منتجات';
+
+  @override
+  String get editCategorySection => 'قسم الأصناف';
+
+  @override
+  String get selectCategoryToEdit => 'إختر صنف للتعديل';
+
+  @override
+  String get editProductsSection => 'قسم تعديل المنتجات';
+
+  @override
+  String get selectProductToEdit => 'إختر منتج للتعديل';
+
+  @override
+  String get editListsSection => 'قسم تعديل قوائم المنتجات';
+
+  @override
+  String get selectListToEdit => 'إختر قائمة للتعديل';
+
+  @override
+  String get edit => 'تعديل';
+
+  @override
+  String get orderStatus => 'حالة الطلب';
+
+  @override
+  String get totalCost => 'التكلفة';
+
+  @override
+  String get orderId => 'رقم الطلب';
+
+  @override
+  String get userId => 'المستخدم';
+
+  @override
+  String get orderDate => 'تاريخ الطلب';
+
+  @override
+  String get filterByStatus => 'تصفية بحالة الطلب';
+
+  @override
+  String get filterByDay => 'تصفية بتاريخ اليوم';
+
+  @override
+  String get filterByPeriod => 'تصفية بالفترة';
+
+  @override
+  String get filterByRange => 'تصفية بالمدة الزمنية';
 }

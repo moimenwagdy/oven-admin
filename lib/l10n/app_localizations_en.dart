@@ -121,4 +121,52 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get selectItems => 'Select Items';
+
+  @override
+  String get editCategorySection => 'Edit Category Section';
+
+  @override
+  String get selectCategoryToEdit => 'Select Category To Edit';
+
+  @override
+  String get editProductsSection => 'Edit Products Section';
+
+  @override
+  String get selectProductToEdit => 'Select Product To Edit';
+
+  @override
+  String get editListsSection => 'Edit Lists Section';
+
+  @override
+  String get selectListToEdit => 'Select List To Edit';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String get orderStatus => 'Order Status';
+
+  @override
+  String get totalCost => 'Total Cost';
+
+  @override
+  String get orderId => 'Order Id';
+
+  @override
+  String get userId => 'User Id';
+
+  @override
+  String get orderDate => 'Order Date';
+
+  @override
+  String get filterByStatus => 'Filter by status';
+
+  @override
+  String get filterByDay => 'Filter by day';
+
+  @override
+  String get filterByPeriod => 'Filter by period';
+
+  @override
+  String get filterByRange => 'Filter by range';
 }

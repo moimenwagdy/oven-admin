@@ -8,8 +8,6 @@ class CategoriesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      spacing: 10,
       children: [
         CategoriesList(),
         Expanded(child: CategoryFormContainer()),

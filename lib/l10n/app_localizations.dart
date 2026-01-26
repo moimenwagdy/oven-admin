@@ -322,6 +322,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select Items'**
   String get selectItems;
+
+  /// No description provided for @editCategorySection.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Category Section'**
+  String get editCategorySection;
+
+  /// No description provided for @selectCategoryToEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Category To Edit'**
+  String get selectCategoryToEdit;
+
+  /// No description provided for @editProductsSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Products Section'**
+  String get editProductsSection;
+
+  /// No description provided for @selectProductToEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Product To Edit'**
+  String get selectProductToEdit;
+
+  /// No description provided for @editListsSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Lists Section'**
+  String get editListsSection;
+
+  /// No description provided for @selectListToEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Select List To Edit'**
+  String get selectListToEdit;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @orderStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Order Status'**
+  String get orderStatus;
+
+  /// No description provided for @totalCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Cost'**
+  String get totalCost;
+
+  /// No description provided for @orderId.
+  ///
+  /// In en, this message translates to:
+  /// **'Order Id'**
+  String get orderId;
+
+  /// No description provided for @userId.
+  ///
+  /// In en, this message translates to:
+  /// **'User Id'**
+  String get userId;
+
+  /// No description provided for @orderDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Order Date'**
+  String get orderDate;
+
+  /// No description provided for @filterByStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by status'**
+  String get filterByStatus;
+
+  /// No description provided for @filterByDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by day'**
+  String get filterByDay;
+
+  /// No description provided for @filterByPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by period'**
+  String get filterByPeriod;
+
+  /// No description provided for @filterByRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by range'**
+  String get filterByRange;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

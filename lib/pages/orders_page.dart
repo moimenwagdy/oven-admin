@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oven_admin/widgets/orders_page_widgets/filters_container.dart';
+import 'package:oven_admin/widgets/orders_page_widgets/orders_page_filters/filters_container.dart';
 import 'package:oven_admin/widgets/orders_page_widgets/orders_list.dart';
+import 'package:oven_admin/widgets/orders_page_widgets/orders_table_header.dart';
 
 class OrdersPage extends StatelessWidget {
   const OrdersPage({super.key});
@@ -10,6 +11,7 @@ class OrdersPage extends StatelessWidget {
     return Column(
       children: [
         FiltersContainer(),
+        OrdersTableHeader(),
         Expanded(child: OrdersList()),
       ],
     );

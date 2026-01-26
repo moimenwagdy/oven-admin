@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/lists_provider/edit_list_provider.dart';
 import 'package:oven_admin/providers/lists_provider/lists_provider.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
 import 'package:uuid/uuid.dart';
 
@@ -17,16 +18,16 @@ class EmptyProductsListsPagePlaceholer extends ConsumerWidget {
         Column(
           children: [
             Text(
-              "Edit Lists Section",
+              context.l10n.editListsSection,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
-            Text("Select List To Edit", style: TextStyle(fontSize: 12)),
+            Text(context.l10n.selectListToEdit, style: TextStyle(fontSize: 12)),
           ],
         ),
         SizedBox(
           width: 200,
           child: FormSubmitButtom(
-            textChild: "Add New List",
+            textChild: context.l10n.addNewList,
             onPressed: () {
               ref
                   .read(editListProvider.notifier)

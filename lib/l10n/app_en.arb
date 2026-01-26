@@ -36,5 +36,21 @@
   "categoryOrderByNumber": "Order",
   "listHeader": "Header",
   "productsList": "Products List",
-  "selectItems": "Select Items"
+  "selectItems": "Select Items",
+  "editCategorySection": "Edit Category Section",
+  "selectCategoryToEdit": "Select Category To Edit",
+  "editProductsSection": "Edit Products Section",
+  "selectProductToEdit": "Select Product To Edit",
+  "editListsSection": "Edit Lists Section",
+  "selectListToEdit": "Select List To Edit",
+  "edit": "Edit",
+  "orderStatus": "Order Status",
+  "totalCost": "Total Cost",
+  "orderId": "Order Id",
+  "userId": "User Id",
+  "orderDate": "Order Date",
+  "filterByStatus": "Filter by status",
+  "filterByDay": "Filter by day",
+  "filterByPeriod": "Filter by period",
+  "filterByRange": "Filter by range"
 }

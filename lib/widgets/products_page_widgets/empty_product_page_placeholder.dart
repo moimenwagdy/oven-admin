@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/products_provider/edit_product_provider.dart';
 import 'package:oven_admin/providers/products_provider/products_provider.dart';
+import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/widgets/custom_widgets/form_submit_button.dart';
 import 'package:uuid/uuid.dart';
 
@@ -17,16 +18,16 @@ class EmptyProductPagePlaceholder extends ConsumerWidget {
         Column(
           children: [
             Text(
-              "Edit Products Section",
+              context.l10n.editProductsSection,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
-            Text("Select Product To Edit", style: TextStyle(fontSize: 12)),
+            Text(context.l10n.selectProductToEdit, style: TextStyle(fontSize: 12)),
           ],
         ),
         SizedBox(
           width: 200,
           child: FormSubmitButtom(
-            textChild: "Add New Product",
+            textChild: context.l10n.addNewProduct,
             onPressed: () {
               ref
                   .read(editProductProvider.notifier)

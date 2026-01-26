@@ -16,7 +16,7 @@ class CategoriesList extends ConsumerWidget {
       data: (data) {
         return SizedBox(
           height: context.screenHeight - 100,
-          width: 200,
+          width: 250,
           child: ListView.separated(
             separatorBuilder: (context, index) => Container(
               color: Theme.of(context).colorScheme.onPrimary,
@@ -38,7 +38,7 @@ class CategoriesList extends ConsumerWidget {
         );
       },
       loading: () => SizedBox(
-        width: 200,
+        width: 250,
         child: Center(
           child: SizedBox(
             width: 20,

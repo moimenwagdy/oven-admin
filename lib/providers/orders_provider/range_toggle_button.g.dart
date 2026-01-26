@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'orders_filter.dart';
+part of 'range_toggle_button.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,53 +9,52 @@ part of 'orders_filter.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(OrdersFilterNofifier)
-const ordersFilterNofifierProvider = OrdersFilterNofifierProvider._();
+@ProviderFor(RagneToggleState)
+const ragneToggleStateProvider = RagneToggleStateProvider._();
 
-final class OrdersFilterNofifierProvider
-    extends $NotifierProvider<OrdersFilterNofifier, OrdersFilter> {
-  const OrdersFilterNofifierProvider._()
+final class RagneToggleStateProvider
+    extends $NotifierProvider<RagneToggleState, bool> {
+  const RagneToggleStateProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'ordersFilterNofifierProvider',
+        name: r'ragneToggleStateProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$ordersFilterNofifierHash();
+  String debugGetCreateSourceHash() => _$ragneToggleStateHash();
 
   @$internal
   @override
-  OrdersFilterNofifier create() => OrdersFilterNofifier();
+  RagneToggleState create() => RagneToggleState();
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(OrdersFilter value) {
+  Override overrideWithValue(bool value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<OrdersFilter>(value),
+      providerOverride: $SyncValueProvider<bool>(value),
     );
   }
 }
 
-String _$ordersFilterNofifierHash() =>
-    r'81aaa51dc31e43d2ac48938ff1946cb60b15fef4';
+String _$ragneToggleStateHash() => r'4359f32f016e577b00ba547c887de79623a282cb';
 
-abstract class _$OrdersFilterNofifier extends $Notifier<OrdersFilter> {
-  OrdersFilter build();
+abstract class _$RagneToggleState extends $Notifier<bool> {
+  bool build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<OrdersFilter, OrdersFilter>;
+    final ref = this.ref as $Ref<bool, bool>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<OrdersFilter, OrdersFilter>,
-              OrdersFilter,
+              AnyNotifier<bool, bool>,
+              bool,
               Object?,
               Object?
             >;
