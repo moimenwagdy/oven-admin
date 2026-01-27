@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/orders_provider/filtered_orders.dart';
-import 'package:oven_admin/widgets/orders_page_widgets/order_item_content.dart';
+import 'package:oven_admin/widgets/orders_page_widgets/orders_list/order_item_content.dart';
 
 class OrdersList extends ConsumerWidget {
   const OrdersList({super.key});

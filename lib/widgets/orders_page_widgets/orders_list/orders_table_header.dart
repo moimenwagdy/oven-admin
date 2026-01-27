@@ -65,11 +65,11 @@ class OrdersTableHeader extends StatelessWidget {
             spacing: 10,
             children: [
               SizedBox(
-                width: 140,
+                width: 120,
                 child: Text("", style: Theme.of(context).textTheme.labelSmall),
               ),
               SizedBox(
-                width: 140,
+                width: 120,
                 child: Text("", style: Theme.of(context).textTheme.labelSmall),
               ),
             ],

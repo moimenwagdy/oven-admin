@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/orders_provider/orders_filter.dart';
+import 'package:oven_admin/providers/orders_provider/range_toggle_button.dart';
 import 'package:oven_admin/utils/helpers/localization_extension.dart';
 import 'package:oven_admin/utils/helpers/reformat_date.dart';
 import 'package:oven_admin/utils/helpers/screen_dimensions.dart';
@@ -33,6 +34,7 @@ class OrdersPageDayDateFilter extends ConsumerWidget {
           .read(ordersFilterNofifierProvider.notifier)
           .updateDayDateFilter(pickedDate);
     }
+    ref.read(ragneToggleStateProvider.notifier).closeRangeButton();
   }
 
   @override

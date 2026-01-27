@@ -1,4 +1,4 @@
-import 'package:oven_admin/widgets/orders_page_widgets/order_items.dart';
+import 'package:oven_admin/widgets/orders_page_widgets/orders_list/order_items.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'orders_provider.g.dart';
 
@@ -17,12 +17,12 @@ class OrdersNotifier extends _$OrdersNotifier {
 
 class OrderItem {
   final String id;
+  final String userId;
   final DateTime createdAt;
   final DateTime updatedAt;
   final List<OrderContentItemType> orderItems;
   final double totalCost;
   final double? discount;
-  final String userId;
   final String status;
 
   OrderItem({
@@ -35,6 +35,7 @@ class OrderItem {
     required this.userId,
     required this.status,
   });
+  void totalCostCount() async {}
 }
 
 final List<OrderItem> ordersList = [
@@ -43,8 +44,8 @@ final List<OrderItem> ordersList = [
     createdAt: DateTime.now().subtract(const Duration(days: 0)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-01", title: "Molten Cake"),
-      OrderContentItemType(id: "IT-02", title: "Espresso"),
+      OrderContentItemType(id: "IT-01", title: "Molten Cake", quantity: 2),
+      OrderContentItemType(id: "IT-02", title: "Espresso", quantity: 3),
     ],
     totalCost: 550,
     discount: 0.12,
@@ -56,8 +57,8 @@ final List<OrderItem> ordersList = [
     createdAt: DateTime.now().subtract(const Duration(days: 1)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-03", title: "Cheesecake"),
-      OrderContentItemType(id: "IT-04", title: "Latte"),
+      OrderContentItemType(id: "IT-03", title: "Cheesecake", quantity: 5),
+      OrderContentItemType(id: "IT-04", title: "Latte", quantity: 2),
     ],
     totalCost: 430,
     discount: null,
@@ -66,11 +67,11 @@ final List<OrderItem> ordersList = [
   ),
   OrderItem(
     id: "ORD-003",
-    createdAt: DateTime.now().subtract(const Duration(days: 60 ,)),
+    createdAt: DateTime.now().subtract(const Duration(days: 60)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-05", title: "Brownies"),
-      OrderContentItemType(id: "IT-06", title: "Cappuccino"),
+      OrderContentItemType(id: "IT-05", title: "Brownies", quantity: 1),
+      OrderContentItemType(id: "IT-06", title: "Cappuccino", quantity: 4),
     ],
     totalCost: 390,
     discount: 0.05,
@@ -82,8 +83,8 @@ final List<OrderItem> ordersList = [
     createdAt: DateTime.now().subtract(const Duration(days: 360)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-07", title: "Croissant"),
-      OrderContentItemType(id: "IT-08", title: "Americano"),
+      OrderContentItemType(id: "IT-07", title: "Croissant", quantity: 3),
+      OrderContentItemType(id: "IT-08", title: "Americano", quantity: 6),
     ],
     totalCost: 270,
     discount: null,
@@ -95,8 +96,21 @@ final List<OrderItem> ordersList = [
     createdAt: DateTime.now().subtract(const Duration(days: 180)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-09", title: "Pancakes"),
-      OrderContentItemType(id: "IT-10", title: "Hot Chocolate"),
+      OrderContentItemType(id: "IT-09", title: "Pancakes", quantity: 6),
+      OrderContentItemType(id: "IT-101", title: "Hot Chocolate", quantity: 2),
+      OrderContentItemType(id: "IT-103", title: "Hot ", quantity: 1),
+      OrderContentItemType(id: "IT-1004", title: " Chocolate", quantity: 3),
+      OrderContentItemType(id: "IT-1006", title: "Hot Chocolate", quantity: 4),
+      OrderContentItemType(id: "IT-106", title: "Hot ", quantity: 1),
+      OrderContentItemType(id: "IT-1007", title: "Hot Chocolate", quantity: 3),
+      OrderContentItemType(id: "IT-10231", title: " Chocolate", quantity: 6),
+      OrderContentItemType(id: "IT-10213", title: "Hot Chocolate", quantity: 7),
+      OrderContentItemType(id: "IT-10566", title: "Hot ", quantity: 6),
+      OrderContentItemType(id: "IT-106", title: " Chocolate", quantity: 9),
+      OrderContentItemType(id: "IT-1031", title: "Hot Chocolate", quantity: 6),
+      OrderContentItemType(id: "IT-1065561", title: "Hot ", quantity: 11),
+      OrderContentItemType(id: "IT-1061653", title: " Chocolate", quantity: 6),
+      OrderContentItemType(id: "IT-10123", title: "Hot Chocolate", quantity: 2),
     ],
     totalCost: 480,
     discount: 0.10,
@@ -108,8 +122,8 @@ final List<OrderItem> ordersList = [
     createdAt: DateTime.now().subtract(const Duration(days: 5)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-11", title: "Waffles"),
-      OrderContentItemType(id: "IT-12", title: "Mocha"),
+      OrderContentItemType(id: "IT-11", title: "Waffles", quantity: 2),
+      OrderContentItemType(id: "IT-12", title: "Mocha", quantity: 2),
     ],
     totalCost: 510,
     discount: null,
@@ -121,21 +135,21 @@ final List<OrderItem> ordersList = [
     createdAt: DateTime.now().subtract(const Duration(days: 6)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-13", title: "Donuts"),
-      OrderContentItemType(id: "IT-14", title: "Flat White"),
+      OrderContentItemType(id: "IT-13", title: "Donuts", quantity: 3),
+      OrderContentItemType(id: "IT-14", title: "Flat White", quantity: 3),
     ],
     totalCost: 360,
     discount: 0.08,
     userId: "USR-05",
-    status: "Preparing",
+    status: "Scheduled",
   ),
   OrderItem(
     id: "ORD-008",
     createdAt: DateTime.now().subtract(const Duration(days: 7)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-15", title: "Apple Pie"),
-      OrderContentItemType(id: "IT-16", title: "Tea"),
+      OrderContentItemType(id: "IT-15", title: "Apple Pie", quantity: 3),
+      OrderContentItemType(id: "IT-16", title: "Tea", quantity: 3),
     ],
     totalCost: 300,
     discount: null,
@@ -147,8 +161,8 @@ final List<OrderItem> ordersList = [
     createdAt: DateTime.now().subtract(const Duration(days: 8)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-17", title: "Tiramisu"),
-      OrderContentItemType(id: "IT-18", title: "Iced Coffee"),
+      OrderContentItemType(id: "IT-17", title: "Tiramisu", quantity: 1),
+      OrderContentItemType(id: "IT-18", title: "Iced Coffee", quantity: 1),
     ],
     totalCost: 620,
     discount: 0.15,
@@ -160,8 +174,8 @@ final List<OrderItem> ordersList = [
     createdAt: DateTime.now().subtract(const Duration(days: 9)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-19", title: "Chocolate Muffin"),
-      OrderContentItemType(id: "IT-20", title: "Macchiato"),
+      OrderContentItemType(id: "IT-19", title: "Chocolate Muffin", quantity: 4),
+      OrderContentItemType(id: "IT-20", title: "Macchiato", quantity: 4),
     ],
     totalCost: 340,
     discount: null,
@@ -173,21 +187,21 @@ final List<OrderItem> ordersList = [
     createdAt: DateTime.now().subtract(const Duration(days: 10)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-21", title: "Banana Bread"),
-      OrderContentItemType(id: "IT-22", title: "Cortado"),
+      OrderContentItemType(id: "IT-21", title: "Banana Bread", quantity: 2),
+      OrderContentItemType(id: "IT-22", title: "Cortado", quantity: 2),
     ],
     totalCost: 410,
     discount: 0.06,
     userId: "USR-08",
-    status: "Preparing",
+    status: "Scheduled",
   ),
   OrderItem(
     id: "ORD-012",
     createdAt: DateTime.now().subtract(const Duration(days: 11)),
     updatedAt: DateTime.now(),
     orderItems: [
-      OrderContentItemType(id: "IT-23", title: "Red Velvet Cake"),
-      OrderContentItemType(id: "IT-24", title: "Matcha Latte"),
+      OrderContentItemType(id: "IT-23", title: "Red Velvet Cake", quantity: 6),
+      OrderContentItemType(id: "IT-24", title: "Matcha Latte", quantity: 6),
     ],
     totalCost: 670,
     discount: 0.20,

@@ -2,6 +2,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:oven_admin/providers/orders_provider/orders_filter.dart';
+import 'package:oven_admin/providers/orders_provider/range_toggle_button.dart';
 import 'package:oven_admin/utils/helpers/localization_extension.dart';
 
 class OrdersPagePeriodFilter extends ConsumerWidget {
@@ -30,9 +31,12 @@ class OrdersPagePeriodFilter extends ConsumerWidget {
                   )
                   .toList(),
               value: selectedValue,
-              onChanged: (value) => ref
-                  .read(ordersFilterNofifierProvider.notifier)
-                  .updateFixedPeriodFilter(value),
+              onChanged: (value) {
+                ref
+                    .read(ordersFilterNofifierProvider.notifier)
+                    .updateFixedPeriodFilter(value);
+                ref.read(ragneToggleStateProvider.notifier).closeRangeButton();
+              },
               customButton: Container(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: Row(

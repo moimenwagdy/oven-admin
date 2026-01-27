@@ -54,4 +54,4 @@ final class FilteredOrdersProvider
   }
 }
 
-String _$filteredOrdersHash() => r'34324b4ed7319b655b926fb1a65a2350d56fa8c1';
+String _$filteredOrdersHash() => r'547ee49e3b81a922f9b3ae0ba1669af291b04d0a';

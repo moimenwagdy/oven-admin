@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:oven_admin/providers/orders_provider/orders_provider.dart';
-import 'package:oven_admin/widgets/orders_page_widgets/order_date.dart';
-import 'package:oven_admin/widgets/orders_page_widgets/order_id.dart';
-import 'package:oven_admin/widgets/orders_page_widgets/order_options_buttons.dart';
-import 'package:oven_admin/widgets/orders_page_widgets/order_status.dart';
-import 'package:oven_admin/widgets/orders_page_widgets/order_total_cost_and_discount.dart';
-import 'package:oven_admin/widgets/orders_page_widgets/order_user.dart';
+import 'package:oven_admin/widgets/orders_page_widgets/orders_list/order_date.dart';
+import 'package:oven_admin/widgets/orders_page_widgets/orders_list/order_id.dart';
+import 'package:oven_admin/widgets/orders_page_widgets/orders_list/order_options_buttons.dart';
+import 'package:oven_admin/widgets/orders_page_widgets/orders_list/order_status.dart';
+import 'package:oven_admin/widgets/orders_page_widgets/orders_list/order_total_cost_and_discount.dart';
+import 'package:oven_admin/widgets/orders_page_widgets/orders_list/order_user.dart';
 
 class OrderItemContent extends StatelessWidget {
   final OrderItem order;
@@ -30,7 +30,7 @@ class OrderItemContent extends StatelessWidget {
             totalCost: order.totalCost,
             discount: order.discount ?? 0,
           ),
-          OrderOptionsButtons(),
+          OrderOptionsButtons(orderItem: order),
           OrderStatus(status: order.status),
         ],
       ),

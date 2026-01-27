@@ -32,7 +32,7 @@ class LayoutWrapper extends StatelessWidget {
               children: [
                 if (!context.isSmallDevice)
                   Container(
-                    width: context.screenWidth * .25,
+                    width: context.screenWidth * .20,
                     height: context.screenHeight,
                     padding: const EdgeInsets.all(10),
                     child: Container(
@@ -49,7 +49,7 @@ class LayoutWrapper extends StatelessWidget {
                 Container(
                   width: context.isSmallDevice
                       ? context.screenWidth
-                      : context.screenWidth * .75,
+                      : context.screenWidth * .80,
                   height: context.screenHeight,
                   padding: const EdgeInsets.all(10),
                   child: Container(

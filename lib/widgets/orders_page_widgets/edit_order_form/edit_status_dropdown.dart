@@ -1,21 +1,21 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:oven_admin/providers/orders_provider/orders_filter.dart';
+import 'package:oven_admin/providers/orders_provider/edit_order_provider.dart';
 import 'package:oven_admin/utils/helpers/localization_extension.dart';
 
-class OrdersPageStatusFilter extends ConsumerWidget {
-  const OrdersPageStatusFilter({super.key});
+class EditStatusDropdown extends ConsumerWidget {
+  const EditStatusDropdown({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
     final date = ['Delivered', 'Preparing', 'Cancelled', "Scheduled"];
-    final selectedValue = ref.watch(ordersFilterNofifierProvider).status;
+    final selectedValue = ref.watch(editOrderProvider)?.status;
     return Row(
       children: [
         SizedBox(
           height: 50,
-          width: 170,
+          width: 200,
           child: DropdownButtonHideUnderline(
             child: DropdownButton2<String>(
               isExpanded: true,
@@ -30,8 +30,8 @@ class OrdersPageStatusFilter extends ConsumerWidget {
                   .toList(),
               value: selectedValue,
               onChanged: (value) => ref
-                  .read(ordersFilterNofifierProvider.notifier)
-                  .updateStatusFilter(value),
+                  .read(editOrderProvider.notifier)
+                  .updateOrderStatus(value!),
               customButton: Container(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: Row(

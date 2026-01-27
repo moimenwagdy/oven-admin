@@ -3,12 +3,12 @@ import 'package:oven_admin/widgets/orders_page_widgets/orders_page_filters/order
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'orders_filter.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class OrdersFilterNofifier extends _$OrdersFilterNofifier {
   @override
   OrdersFilter build() {
     return OrdersFilter(
-      dayDate: null,
+      dayDate: DateTime.now(),
       fixedPeriod: null,
       range: null,
       status: null,

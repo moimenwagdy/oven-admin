@@ -14,7 +14,6 @@ AsyncValue<List<OrderItem>> filteredOrders(ref) {
   final hasDayDate = filter.dayDate != null;
 
   return ordersAsync.whenData((List<OrderItem> orders) {
-   
     /// status filter only
     if (hasStatus && !hasDayDate && !hasFixedPeriod && !hasRange) {
       return orders.where((ele) {
@@ -46,9 +45,11 @@ AsyncValue<List<OrderItem>> filteredOrders(ref) {
     }
     // range filter only
     if (hasRange && !hasStatus) {
+      final toDate = (filter.range!.to!);
+      final modifiedDate = DateTime(toDate.year, toDate.month, toDate.day + 1);
       return orders.where((ele) {
         return ele.createdAt.isAfter(filter.range!.from!) &&
-            ele.createdAt.isBefore(filter.range!.to!);
+            ele.createdAt.isBefore(modifiedDate);
       }).toList();
     }
     //range filter + status

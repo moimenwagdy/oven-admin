@@ -20,7 +20,7 @@ final class OrdersFilterNofifierProvider
         argument: null,
         retry: null,
         name: r'ordersFilterNofifierProvider',
-        isAutoDispose: true,
+        isAutoDispose: false,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
@@ -42,7 +42,7 @@ final class OrdersFilterNofifierProvider
 }
 
 String _$ordersFilterNofifierHash() =>
-    r'81aaa51dc31e43d2ac48938ff1946cb60b15fef4';
+    r'a422937755a7eb1081e95371017564b59bd99345';
 
 abstract class _$OrdersFilterNofifier extends $Notifier<OrdersFilter> {
   OrdersFilter build();

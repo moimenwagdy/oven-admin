@@ -31,11 +31,7 @@ class CustomEditInputWithTitle extends StatelessWidget {
             SizedBox(width: 150, height: 50, child: rowPreviewArea),
           ],
         ),
-        if (colPrviewArea != null)
-          SizedBox(
-            width: 400,
-            child: colPrviewArea!,
-          ),
+        if (colPrviewArea != null) SizedBox(width: 400, child: colPrviewArea!),
       ],
     );
   }

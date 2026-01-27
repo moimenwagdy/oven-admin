@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'range_toggle_button.dart';
+part of 'edit_order_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,52 +9,52 @@ part of 'range_toggle_button.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(RagneToggleState)
-const ragneToggleStateProvider = RagneToggleStateProvider._();
+@ProviderFor(EditOrderNotifier)
+const editOrderProvider = EditOrderNotifierProvider._();
 
-final class RagneToggleStateProvider
-    extends $NotifierProvider<RagneToggleState, bool> {
-  const RagneToggleStateProvider._()
+final class EditOrderNotifierProvider
+    extends $NotifierProvider<EditOrderNotifier, OrderItem?> {
+  const EditOrderNotifierProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'ragneToggleStateProvider',
-        isAutoDispose: false,
+        name: r'editOrderProvider',
+        isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$ragneToggleStateHash();
+  String debugGetCreateSourceHash() => _$editOrderNotifierHash();
 
   @$internal
   @override
-  RagneToggleState create() => RagneToggleState();
+  EditOrderNotifier create() => EditOrderNotifier();
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(bool value) {
+  Override overrideWithValue(OrderItem? value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<bool>(value),
+      providerOverride: $SyncValueProvider<OrderItem?>(value),
     );
   }
 }
 
-String _$ragneToggleStateHash() => r'91f4528c8d719b0fa090cffc46cd031e3e85fce6';
+String _$editOrderNotifierHash() => r'99f5867e0ff28a532a56cfbcc5009075401a733d';
 
-abstract class _$RagneToggleState extends $Notifier<bool> {
-  bool build();
+abstract class _$EditOrderNotifier extends $Notifier<OrderItem?> {
+  OrderItem? build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<bool, bool>;
+    final ref = this.ref as $Ref<OrderItem?, OrderItem?>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<bool, bool>,
-              bool,
+              AnyNotifier<OrderItem?, OrderItem?>,
+              OrderItem?,
               Object?,
               Object?
             >;

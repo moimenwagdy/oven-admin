@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 class OrderTotalCostAndDiscount extends StatelessWidget {
   final double totalCost;
   final double discount;
-
   const OrderTotalCostAndDiscount({
     super.key,
     required this.discount,
     required this.totalCost,
   });
-
   @override
   Widget build(BuildContext context) {
     return Row(
